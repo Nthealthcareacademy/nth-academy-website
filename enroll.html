@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrollment Application — North Texas Healthcare Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A6B; --navy-dark:#102241; --teal:#0E7C7B; --teal-dark:#0A5F5E;
+    --gold:#C9962C; --gold-dark:#A87B21; --ice:#F4F6FB; --paper:#FFFFFF;
+    --charcoal:#2D2D2D; --text-soft:#5C6470; --border:#E1E6F0;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif; background:var(--ice); color:var(--charcoal); line-height:1.6; margin:0;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--navy-dark);}
+  a{color:var(--teal-dark);}
+  .wrap{max-width:860px; margin:0 auto; padding:0 20px;}
+
+  /* Header */
+  header{background:var(--navy); color:#fff; padding:22px 0;}
+  header .wrap{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
+  header .brand{font-family:'Poppins',sans-serif; font-weight:700; font-size:18px; color:#fff; line-height:1.2;}
+  header .brand span{display:block; font-size:12px; font-weight:500; color:#C9D3E8; letter-spacing:0.02em;}
+  header a.back{color:#fff; font-size:13px; font-weight:600; text-decoration:none; border:1.5px solid rgba(255,255,255,0.5); padding:8px 16px; border-radius:8px;}
+  header a.back:hover{background:rgba(255,255,255,0.12);}
+
+  /* Intro */
+  .intro{background:var(--paper); border-bottom:1px solid var(--border); padding:34px 0;}
+  .intro h1{font-size:26px; margin:0 0 8px;}
+  .intro p{color:var(--text-soft); font-size:15px; margin:0; max-width:640px;}
+  .intro .meta{margin-top:16px; font-size:13px; color:var(--text-soft);}
+  .intro .meta strong{color:var(--navy-dark);}
+
+  form{padding:32px 0 60px;}
+  fieldset{background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:26px; margin:0 0 22px;}
+  legend{font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:var(--navy-dark); padding:0 10px;}
+  .sec-note{font-size:13px; color:var(--text-soft); margin:-4px 0 18px;}
+
+  label{display:block; font-size:13px; font-weight:600; color:var(--navy-dark); margin-bottom:6px;}
+  .req::after{content:" *"; color:#B4321F;}
+  input[type=text], input[type=email], input[type=tel], input[type=date], input[type=number], select, textarea{
+    width:100%; padding:10px 12px; font-size:14px; font-family:'Inter',sans-serif; color:var(--charcoal);
+    border:1.5px solid var(--border); border-radius:8px; background:#fff; margin-bottom:16px;
+  }
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--teal);}
+  textarea{resize:vertical; min-height:80px;}
+  .row{display:grid; gap:0 18px;}
+  .row.c2{grid-template-columns:1fr 1fr;}
+  .row.c3{grid-template-columns:1fr 1fr 1fr;}
+  @media(max-width:640px){ .row.c2,.row.c3{grid-template-columns:1fr;} }
+
+  .choice{display:flex; flex-wrap:wrap; gap:10px 22px; margin-bottom:16px;}
+  .choice label{display:flex; align-items:center; gap:8px; font-weight:500; color:var(--charcoal); margin:0; cursor:pointer;}
+  .choice input{margin:0;}
+  .ack{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; font-size:14px; color:var(--charcoal);}
+  .ack input{margin-top:4px; flex-shrink:0; width:18px; height:18px;}
+  .ack label{font-weight:500; color:var(--charcoal); margin:0;}
+
+  .policy{background:var(--ice); border:1px solid var(--border); border-radius:10px; padding:18px 20px; max-height:320px; overflow-y:auto; font-size:13px; line-height:1.6; margin-bottom:16px;}
+  .policy h4{margin:0 0 8px; font-size:14px;}
+  .policy p, .policy li{color:#3f4855; margin:0 0 10px;}
+  .policy ol{padding-left:20px; margin:0 0 10px;}
+
+  .initial-line{display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;}
+  .initial-line input{width:90px; flex-shrink:0; margin-bottom:0; text-align:center; text-transform:uppercase;}
+  .initial-line span{font-size:14px; color:var(--charcoal);}
+
+  table.edu{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:13px;}
+  table.edu th{text-align:left; font-size:12px; color:var(--text-soft); font-weight:600; padding:0 8px 6px 0;}
+  table.edu td{padding:0 8px 8px 0; vertical-align:top;}
+  table.edu input{margin-bottom:0;}
+
+  .sig-pad{border:1.5px dashed var(--border); border-radius:10px; background:#fff; touch-action:none; width:100%; height:150px; display:block;}
+  .sig-actions{margin:8px 0 16px; display:flex; gap:12px; align-items:center;}
+  .btn-clear{background:none; border:1px solid var(--border); color:var(--text-soft); font-size:12px; font-weight:600; padding:6px 12px; border-radius:7px; cursor:pointer;}
+
+  .note{background:#FBEFC9; border-radius:8px; padding:12px 14px; font-size:13px; color:var(--navy-dark); margin-bottom:16px;}
+  .fill{background:#FBEFC9; border-radius:3px; padding:0 5px; font-weight:600;}
+
+  .submit-bar{background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:24px 26px; text-align:center;}
+  .submit-bar p{font-size:13px; color:var(--text-soft); margin:0 0 16px;}
+  button.submit{background:var(--gold); color:var(--navy-dark); font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; border:none; border-radius:10px; padding:14px 40px; cursor:pointer;}
+  button.submit:hover{background:var(--gold-dark); color:#fff;}
+
+  footer{background:var(--paper); border-top:1px solid var(--border); padding:26px 0; text-align:center; font-size:12px; color:var(--text-soft);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">North Texas Healthcare Academy<span>Enrollment Application</span></div>
+    <a class="back" href="index.html">&larr; Back to site</a>
+  </div>
+</header>
+
+<div class="intro">
+  <div class="wrap">
+    <h1>Student Enrollment Application</h1>
+    <p>Complete all sections below. Type or print clearly and fill in every applicable field; enter "NA" where an item does not apply. You will sign electronically at the end and may upload supporting documents.</p>
+    <div class="meta">
+      <strong>North Texas Healthcare Academy</strong> &nbsp;·&nbsp; 4222 Moulton St., Suite C, Greenville, TX 75401 &nbsp;·&nbsp; (945) 275-2352<br>
+      TWC School No. S63704 &nbsp;·&nbsp; nthealthcareacademy.com
+    </div>
+  </div>
+</div>
+
+<form class="wrap" action="https://formspree.io/f/mbglkzzo" method="POST" enctype="multipart/form-data" id="enrollForm">
+
+  <!-- SECTION A: APPLICATION -->
+  <fieldset>
+    <legend>1. Student Application</legend>
+
+    <label class="req">This application is for</label>
+    <div class="choice">
+      <label><input type="radio" name="class_schedule" value="Day Class" required> Day Class</label>
+      <label><input type="radio" name="class_schedule" value="Evening Class"> Evening Class</label>
+      <label><input type="radio" name="class_schedule" value="Weekend"> Weekend</label>
+    </div>
+
+    <label class="req">Program applying for</label>
+    <select name="program" required>
+      <option value="">Select a program…</option>
+      <option>Certified Nursing Assistant</option>
+      <option>Phlebotomy Technician</option>
+      <option>EKG Technician</option>
+      <option>Medical Assistant</option>
+      <option>Patient Care Technician</option>
+      <option>Medical Billing &amp; Coding</option>
+    </select>
+
+    <div class="row c3">
+      <div><label class="req">Last name</label><input type="text" name="last_name" required></div>
+      <div><label class="req">First name</label><input type="text" name="first_name" required></div>
+      <div><label>Middle name</label><input type="text" name="middle_name"></div>
+    </div>
+
+    <div class="row c3">
+      <div><label class="req">Social Security #</label><input type="text" name="ssn" required></div>
+      <div><label class="req">Date of birth</label><input type="date" name="dob" required></div>
+      <div><label class="req">Phone #</label><input type="tel" name="phone" required></div>
+    </div>
+
+    <label class="req">Email</label><input type="email" name="email" required>
+
+    <div class="row c3">
+      <div><label class="req">Address</label><input type="text" name="address" required></div>
+      <div><label class="req">City</label><input type="text" name="city" required></div>
+      <div><label class="req">Zip</label><input type="text" name="zip" required></div>
+    </div>
+
+    <label>Highest school completed</label><input type="text" name="highest_school">
+
+    <h4 style="margin:12px 0 12px;">In case of emergency, please notify</h4>
+    <div class="row c3">
+      <div><label class="req">Name</label><input type="text" name="emergency_name" required></div>
+      <div><label class="req">Phone #</label><input type="tel" name="emergency_phone" required></div>
+      <div><label class="req">Relationship</label><input type="text" name="emergency_relationship" required></div>
+    </div>
+
+    <label>Have you ever taken this class before?</label>
+    <div class="choice">
+      <label><input type="radio" name="taken_before" value="Yes"> Yes</label>
+      <label><input type="radio" name="taken_before" value="No"> No</label>
+    </div>
+    <div class="row c2">
+      <div><label>If yes, when</label><input type="text" name="taken_when"></div>
+      <div><label>Where</label><input type="text" name="taken_where"></div>
+    </div>
+
+    <label>Are you receiving financial assistance to attend this class?</label>
+    <div class="choice">
+      <label><input type="radio" name="financial_assistance" value="Yes"> Yes</label>
+      <label><input type="radio" name="financial_assistance" value="No"> No</label>
+    </div>
+
+    <label>How did you hear about us?</label>
+    <div class="choice">
+      <label><input type="checkbox" name="referral_source" value="Flyer"> Flyer</label>
+      <label><input type="checkbox" name="referral_source" value="Facebook"> Facebook</label>
+      <label><input type="checkbox" name="referral_source" value="Internet"> Internet</label>
+      <label><input type="checkbox" name="referral_source" value="Friend referral"> Friend referral</label>
+    </div>
+    <label>If other, please specify</label><input type="text" name="referral_specify">
+    <label>Preferred update method</label>
+    <div class="choice">
+      <label><input type="checkbox" name="update_via" value="Email"> Email</label>
+      <label><input type="checkbox" name="update_via" value="Text Messages"> Text Messages</label>
+    </div>
+  </fieldset>
+
+  <!-- SECTION B: ENROLLMENT AGREEMENT -->
+  <fieldset>
+    <legend>2. Student Enrollment Agreement</legend>
+    <p class="sec-note">Program details and costs are confirmed by the school for your selected program and provided in the school catalog.</p>
+
+    <div class="row c3">
+      <div><label>Program length</label><input type="text" name="program_length" placeholder="e.g., 4–6 weeks"></div>
+      <div><label>Clock hours</label><input type="text" name="program_hours"></div>
+      <div><label>Date to begin</label><input type="date" name="start_date"></div>
+    </div>
+
+    <div class="note">Cost schedule — to be finalized by the school before publishing. Registration, tuition, books, state exam/certification fee, and supplies, with a total that includes tax and state exam fees, are stated here per program.</div>
+
+    <label class="req">Method of payment</label>
+    <div class="choice">
+      <label><input type="radio" name="payment_method" value="Money Order" required> Money Order</label>
+      <label><input type="radio" name="payment_method" value="Cashier Check"> Cashier Check</label>
+      <label><input type="radio" name="payment_method" value="Check"> Check</label>
+      <label><input type="radio" name="payment_method" value="Cash"> Cash</label>
+      <label><input type="radio" name="payment_method" value="Credit/Debit card"> Credit/Debit card</label>
+    </div>
+    <p class="sec-note">Payments will be made before the start of the first day of class.</p>
+
+    <div class="policy">
+      <p>"Any holder of this consumer credit contract is subject to all claims and defenses which the debtor could assert against the seller of goods or services obtained pursuant hereto or with the proceeds hereof. Recovery hereunder by the debtor shall not exceed the amount paid by the debtor hereunder."</p>
+      <p>North Texas Healthcare Academy will give equal opportunity to all applicants regardless of race, sex, or national origin. Approved and regulated by the Texas Workforce Commission, Career Schools and Colleges. I have received a copy of this enrollment agreement and the catalog.</p>
+    </div>
+
+    <div class="ack">
+      <input type="checkbox" name="ack_agreement" value="I agree to the Student Enrollment Agreement" required>
+      <label>I have read and agree to the Student Enrollment Agreement above.</label>
+    </div>
+  </fieldset>
+
+  <!-- SECTION C: CANCELLATION & REFUND POLICY -->
+  <fieldset>
+    <legend>3. Cancellation &amp; Refund Policy</legend>
+    <div class="policy">
+      <h4>Cancellation Policy</h4>
+      <p>A full refund will be made to any student who cancels the enrollment contract within 72 hours (until midnight of the third day excluding Saturdays, Sundays and legal holidays) after the enrollment contract is signed. A full refund will also be made to any student who cancels enrollment within the student's first three scheduled class days, except that the school may retain not more than $100 in any administrative fees charged, as well as items of extra expense that are necessary for the portion of the program attended and stated separately on the enrollment agreement.</p>
+      <h4>Refund Policy</h4>
+      <ol>
+        <li>Refund computations will be based on scheduled course time of class attendance through the last date of attendance. Leaves of absence, suspensions and school holidays will not be counted as part of the scheduled class attendance.</li>
+        <li>The effective date of termination for refund purposes will be the earliest of the following: (a) the last day of attendance, if the student is terminated by the school; (b) the date of receipt of written notice from the student; or (c) ten school days following the last date of attendance.</li>
+        <li>If tuition and fees are collected in advance of entrance, and if after expiration of the 72 hour cancellation privilege the student does not enter school, not more than $100 in any administrative fees charged shall be retained by the school for the entire residence program or synchronous distance education course.</li>
+        <li>If a student enters a residence or synchronous distance education program and withdraws or is otherwise terminated after the cancellation period, the school or college may retain not more than $100 in any administrative fees charged for the entire program. The minimum refund of the remaining tuition and fees will be the pro rata portion of tuition, fees, and other charges that the number of hours remaining in the portion of the course or program for which the student has been charged after the effective date of termination bears to the total number of hours in the portion of the course or program for which the student has been charged, except that a student may not collect a refund if the student has completed 75 percent or more of the total number of hours in the portion of the program for which the student has been charged on the effective date of termination.</li>
+        <li>Refunds for items of extra expense to the student, such as books, tools, or other supplies are to be handled separately from refund of tuition and other academic fees.</li>
+        <li>A student who withdraws for a reason unrelated to the student's academic status after the 75 percent completion mark and requests a grade at the time of withdrawal shall be given a grade of "incomplete" and permitted to re-enroll in the course or program during the 12-month period following the date the student withdrew without payment of additional tuition for that portion of the course or program.</li>
+        <li>A full refund of all tuition and fees is due and refundable in each of the following cases: (a) an enrollee is not accepted by the school; (b) if the course of instruction is discontinued by the school and this prevents the student from completing the course; or (c) if the student's enrollment was procured as a result of any misrepresentation in advertising, promotional materials of the school, or representations by the owner or representatives of the school.</li>
+        <li>Refund policy for students called to active military service: a student who withdraws as a result of being called to active duty in a military service of the United States or the Texas National Guard may elect one of the options described in the school catalog (pro rata refund, a grade of incomplete with the designation "withdrawn-military," or, where at least 90 percent of coursework is completed, an appropriate final grade or credit).</li>
+        <li>The payment of refunds will be totally completed such that the refund instrument has been negotiated or credited into the proper account(s), within 60 days after the effective date of termination.</li>
+      </ol>
+    </div>
+    <div class="ack">
+      <input type="checkbox" name="ack_refund" value="I acknowledge the Cancellation & Refund Policy" required>
+      <label>I have received and read the Cancellation &amp; Refund Policy.</label>
+    </div>
+  </fieldset>
+
+  <!-- SECTION D: RECEIPT OF ENROLLMENT POLICIES (CSC-009) -->
+  <fieldset>
+    <legend>4. Receipt of Enrollment Policies</legend>
+    <p class="sec-note">Texas Workforce Commission — Career Schools and Colleges (Form CSC-009). Check each item to acknowledge receipt prior to enrollment.</p>
+
+    <p style="font-weight:600; margin:0 0 12px;">A. I have received prior to enrollment:</p>
+    <div class="ack"><input type="checkbox" name="csc009_a" value="catalog and program outline" required><label>a copy of the school catalog and a program/course outline for the program(s) in which I wish to enroll.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_b" value="schedule of tuition, fees, and other charges" required><label>a schedule of the tuition, fees, and other charges.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_c" value="cancellation and refund policy" required><label>a copy of the cancellation and refund policy.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_d" value="attendance, progress and grievance policies" required><label>the attendance, progress and grievance policies.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_e" value="rules of operation and conduct" required><label>rules of operation and conduct.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_f" value="regulations pertaining to incomplete grades" required><label>regulations pertaining to incomplete grades.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_g" value="difference between a loan and a grant"><label>written and oral explanations of the difference between a Loan and a Grant (only if the school participates in a loan or grant program).</label></div>
+
+    <p style="font-weight:600; margin:16px 0 12px;">B. Transferability of Credit Hours</p>
+    <div class="ack"><input type="checkbox" name="csc009_transfer" value="acknowledged"><label>If the school awards credit hours, I understand that transferability of any credit hours earned at this school may be limited, and I have been provided a list of Texas institutions that will accept credit hours earned at this school.</label></div>
+
+    <p style="font-weight:600; margin:16px 0 12px;">C. Other Acknowledgments</p>
+    <div class="ack"><input type="checkbox" name="csc009_prior_ed" value="acknowledged"><label>I have furnished information disclosing my previous education, training, and work experiences, which may be evaluated and result in my program length being shortened and the cost reduced.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_grievance" value="acknowledged" required><label>I understand that grievances not resolved by the school may be forwarded to the Texas Workforce Commission, Career Schools and Colleges, Room 226T, 101 East 15th Street, Austin, Texas 78778-0001, (512) 936-3100.</label></div>
+    <div class="ack"><input type="checkbox" name="csc009_cost_compare" value="acknowledged"><label>A comparison of the cost of a similar course or program at other schools is available by contacting the Texas Workforce Commission, Career Schools and Colleges (address above).</label></div>
+
+    <label>Employment in this career field requires state or national licensing, certification, or registration</label>
+    <div class="choice">
+      <label><input type="radio" name="licensing_required" value="Does" checked> Does</label>
+      <label><input type="radio" name="licensing_required" value="Does not"> Does not</label>
+    </div>
+    <label>Name of State or National License, Certificate, or Registration (if required)</label>
+    <input type="text" name="license_name" value="" placeholder="e.g., Texas Nurse Aide Certification (for CNA)">
+
+    <div class="ack" style="margin-top:8px;"><input type="checkbox" name="csc009_signed" value="I certify I have been provided all information above prior to enrollment" required><label>I certify that I have been provided all the information above prior to my enrollment, and I understand it is my responsibility to notify the school if I withdraw prior to completion.</label></div>
+  </fieldset>
+
+  <!-- SECTION E: PLEASE INITIAL -->
+  <fieldset>
+    <legend>5. Acknowledgments — Please Initial</legend>
+    <p class="sec-note">Enter your initials on each line to acknowledge.</p>
+    <div class="initial-line"><input type="text" name="init_tour" maxlength="5" placeholder="Init." required><span>I have had the opportunity to tour the school facilities and equipment.</span></div>
+    <div class="initial-line"><input type="text" name="init_catalog" maxlength="5" placeholder="Init." required><span>I have been furnished with the school catalog. It is my responsibility to read and abide by the policies in the catalog.</span></div>
+    <div class="initial-line"><input type="text" name="init_grade" maxlength="5" placeholder="Init." required><span>The passing grade for this course is <span class="fill">70%</span> (confirm). Students with an overall average, skills lab, or final exam grade below the passing grade will not be allowed to continue the clinical portion of the class.</span></div>
+    <div class="initial-line"><input type="text" name="init_release" maxlength="5" placeholder="Init." required><span>I give permission to North Texas Healthcare Academy to release my grades, attendance, and progress reports to any agency/organization assisting me financially. I also give permission for my name and photograph to be used for graduation announcements and course promotion materials.</span></div>
+  </fieldset>
+
+  <!-- SECTION F: RECORD OF PREVIOUS EDUCATION (CSC-010) -->
+  <fieldset>
+    <legend>6. Record of Previous Education &amp; Training</legend>
+    <p class="sec-note">Texas Workforce Commission — Career Schools and Colleges (Form CSC-010). Enter "NA" where not applicable.</p>
+
+    <label>Secondary education</label>
+    <div class="choice">
+      <label><input type="radio" name="secondary_education" value="High School Diploma"> High School Diploma</label>
+      <label><input type="radio" name="secondary_education" value="Home Schooled"> Home Schooled</label>
+      <label><input type="radio" name="secondary_education" value="GED"> GED</label>
+    </div>
+
+    <label>Post-secondary education (list any college, technical/vocational, or other)</label>
+    <table class="edu">
+      <tr><th>Name &amp; location of school</th><th>Dates attended</th><th>Graduated?</th><th>Diploma / field of study</th></tr>
+      <tr>
+        <td><input type="text" name="edu1_school"></td>
+        <td><input type="text" name="edu1_dates"></td>
+        <td><input type="text" name="edu1_grad" placeholder="Y/N"></td>
+        <td><input type="text" name="edu1_field"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="edu2_school"></td>
+        <td><input type="text" name="edu2_dates"></td>
+        <td><input type="text" name="edu2_grad" placeholder="Y/N"></td>
+        <td><input type="text" name="edu2_field"></td>
+      </tr>
+    </table>
+
+    <label>Previous training — identify previous experience and skills that relate to the program curriculum for which you desire credit</label>
+    <textarea name="previous_training"></textarea>
+
+    <div class="ack"><input type="checkbox" name="csc010_certify" value="I certify the above is true and complete" required><label>I certify that all the above information is true and complete.</label></div>
+  </fieldset>
+
+  <!-- SECTION G: DOCUMENT UPLOAD -->
+  <fieldset>
+    <legend>7. Supporting Documents (optional)</legend>
+    <p class="sec-note">Upload a photo ID, high school diploma/GED, or any documents requested by the school. Accepted: PDF, JPG, PNG.</p>
+    <label>Attach documents</label>
+    <input type="file" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png">
+    <div class="note">Note: file uploads through this form require a paid Formspree plan. If uploads aren't enabled, students can email documents to admissions@nthealthcareacademy.com.</div>
+  </fieldset>
+
+  <!-- SECTION H: SIGNATURE -->
+  <fieldset>
+    <legend>8. Electronic Signature</legend>
+    <p class="sec-note">Sign in the box below using your mouse or finger. This applies to the Enrollment Agreement and all acknowledgments above.</p>
+    <canvas id="sigPad" class="sig-pad"></canvas>
+    <div class="sig-actions">
+      <button type="button" class="btn-clear" id="sigClear">Clear signature</button>
+      <span style="font-size:12px; color:var(--text-soft);">Draw your signature above.</span>
+    </div>
+    <input type="hidden" name="signature_image" id="sigData">
+    <div class="row c2">
+      <div><label class="req">Printed name of student</label><input type="text" name="signature_printed_name" required></div>
+      <div><label class="req">Date</label><input type="date" name="signature_date" required></div>
+    </div>
+    <div class="ack">
+      <input type="checkbox" name="ack_final" value="I certify all information is true and correct" required>
+      <label>I certify that the information provided in this application is true and correct. I understand that false information may result in immediate suspension or removal from the course with no refund. I understand that successful completion of a course satisfies the academic requirements to sit for the state exam but does not guarantee state certification.</label>
+    </div>
+  </fieldset>
+
+  <div class="submit-bar">
+    <p>By submitting, a copy of your application is sent to North Texas Healthcare Academy. The school will contact you to complete enrollment and payment.</p>
+    <input type="hidden" name="_subject" value="New NTHA Enrollment Application">
+    <button type="submit" class="submit">Submit Application</button>
+  </div>
+</form>
+
+<footer>
+  <div class="wrap">North Texas Healthcare Academy · 4222 Moulton St., Suite C, Greenville, TX 75401 · (945) 275-2352 · TWC School No. S63704</div>
+</footer>
+
+<script>
+  // Signature pad
+  var canvas = document.getElementById('sigPad');
+  var ctx = canvas.getContext('2d');
+  var drawing = false, dirty = false;
+  function resize(){
+    var ratio = window.devicePixelRatio || 1;
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    ctx.scale(ratio, ratio);
+    ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.strokeStyle = '#102241';
+  }
+  window.addEventListener('resize', function(){ var d=document.getElementById('sigData').value; resize(); });
+  resize();
+  function pos(e){
+    var rect = canvas.getBoundingClientRect();
+    var t = e.touches ? e.touches[0] : e;
+    return {x: t.clientX - rect.left, y: t.clientY - rect.top};
+  }
+  function start(e){ drawing=true; dirty=true; var p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); e.preventDefault(); }
+  function move(e){ if(!drawing) return; var p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); e.preventDefault(); }
+  function end(){ drawing=false; if(dirty){ document.getElementById('sigData').value = canvas.toDataURL('image/png'); } }
+  canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  canvas.addEventListener('touchstart', start); canvas.addEventListener('touchmove', move); canvas.addEventListener('touchend', end);
+  document.getElementById('sigClear').addEventListener('click', function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height); dirty=false; document.getElementById('sigData').value='';
+  });
+  // Ensure signature captured on submit
+  document.getElementById('enrollForm').addEventListener('submit', function(e){
+    if(dirty){ document.getElementById('sigData').value = canvas.toDataURL('image/png'); }
+    if(!document.getElementById('sigData').value){
+      e.preventDefault();
+      alert('Please sign in the signature box before submitting.');
+    }
+  });
+</script>
+</body>
+</html>
