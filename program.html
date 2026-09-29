@@ -80,6 +80,15 @@
   @media (max-width:560px){ .wrap{padding:0 20px;} .prog-hero h1{font-size:30px;} .idx-grid{grid-template-columns:1fr;} }
   .fee-waived{display:inline-block; background:rgba(201,150,44,0.14); color:var(--navy-dark); font-weight:600; font-size:14px; padding:7px 14px; border-radius:20px; margin:0 0 16px;}
   .fee-waived strong{color:var(--gold-dark);}
+
+  .startdates{margin:26px 0 6px; background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:24px 26px;}
+  .startdates h3{margin:0 0 6px;}
+  .sd-note{margin:0 0 16px; color:var(--text-soft); font-size:15.5px;}
+  .sd-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 20px;}
+  .sd-row{display:flex; justify-content:space-between; gap:14px; padding:11px 14px; border:1px solid var(--border); border-left:4px solid var(--teal); border-radius:9px;}
+  .sd-start{font-weight:700; color:var(--navy-dark);}
+  .sd-end{color:var(--text-soft); font-size:15px; align-self:center;}
+  @media (max-width:640px){ .sd-grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -143,7 +152,20 @@
     </div>
     <div class="prog-body">
       <div class="prog-main">
-        <h2>What you'll learn</h2>
+        <div class="startdates">
+        <h3>Upcoming CNA start dates</h3>
+        <p class="sd-note">New classes begin about once a month and run five weeks. Seats are limited, so early registration is encouraged. New cohorts continue monthly through 2027.</p>
+        <div class="sd-grid">
+          <div class="sd-row"><span class="sd-start">Monday, Oct 5</span><span class="sd-end">ends Oct 30, 2026</span></div>
+          <div class="sd-row"><span class="sd-start">Monday, Nov 2</span><span class="sd-end">ends Nov 30, 2026</span></div>
+          <div class="sd-row"><span class="sd-start">Wednesday, Dec 2</span><span class="sd-end">ends Dec 31, 2026</span></div>
+          <div class="sd-row"><span class="sd-start">Monday, Jan 4</span><span class="sd-end">ends Jan 29, 2027</span></div>
+          <div class="sd-row"><span class="sd-start">Monday, Feb 1</span><span class="sd-end">ends Feb 26, 2027</span></div>
+          <div class="sd-row"><span class="sd-start">Monday, Mar 1</span><span class="sd-end">ends Mar 26, 2027</span></div>
+        </div>
+      </div>
+
+      <h2>What you'll learn</h2>
         <ul class="ticks">
         <li>Long-term care fundamentals and the role of the nurse aide</li>
         <li>Personal care: bathing, grooming, feeding, and safe mobility</li>
@@ -160,14 +182,15 @@
       <aside class="prog-side">
         <h3>Program at a glance</h3>
         <div class="glance"><span>Length</span><strong>5 weeks</strong></div>
+        <div class="glance"><span>Clock hours</span><strong>100 hours (60 classroom, 40 clinical)</strong></div>
         <div class="glance"><span>Format</span><strong>In-person, hands-on, on campus</strong></div>
         <div class="glance"><span>Prepares you for</span><strong>Texas Health &amp; Human Services Nurse Aide competency exam (Certified Nurse Aide)</strong></div>
         <h3 style="margin-top:22px;">Admission requirements</h3>
         <ul class="ticks small">
-        <li>At least 17 years old</li>
-        <li>High school diploma or GED</li>
-        <li>Current immunization and health records</li>
-        <li>Pass a background check and drug screening</li>
+        <li>At least 17 years old (applicants under 18 need written parent or guardian permission)</li>
+        <li>Minimum 8th grade education, or a passing score on the Wonderlic entrance test</li>
+        <li>Valid photo ID and Social Security number</li>
+        <li>Clear the Employee Misconduct Registry and the criminal history check required for nurse aides</li>
         </ul>
         <a href="enroll.html" class="btn-gold full">Apply now</a>
       </aside>
