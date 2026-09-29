@@ -14,7 +14,7 @@
     --charcoal:#2D2D2D; --text-soft:#5C6470; --border:#E1E6F0;
   }
   *{box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif; background:var(--ice); color:var(--charcoal); line-height:1.6; margin:0;}
+  body{font-size:18px; font-family:'Inter',sans-serif; background:var(--ice); color:var(--charcoal); line-height:1.6; margin:0;}
   h1,h2,h3,h4{font-family:'Poppins',sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--navy-dark);}
   a{color:var(--teal-dark);}
   .wrap{max-width:860px; margin:0 auto; padding:0 20px;}
@@ -22,27 +22,27 @@
   /* Header */
   header{background:var(--navy); color:#fff; padding:22px 0;}
   header .wrap{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
-  header .brand{font-family:'Poppins',sans-serif; font-weight:700; font-size:18px; color:#fff; line-height:1.2;}
-  header .brand span{display:block; font-size:12px; font-weight:500; color:#C9D3E8; letter-spacing:0.02em;}
-  header a.back{color:#fff; font-size:13px; font-weight:600; text-decoration:none; border:1.5px solid rgba(255,255,255,0.5); padding:8px 16px; border-radius:8px;}
+  header .brand{font-family:'Poppins',sans-serif; font-weight:700; font-size:20.5px; color:#fff; line-height:1.2;}
+  header .brand span{display:block; font-size:14px; font-weight:500; color:#C9D3E8; letter-spacing:0.02em;}
+  header a.back{color:#fff; font-size:15px; font-weight:600; text-decoration:none; border:1.5px solid rgba(255,255,255,0.5); padding:8px 16px; border-radius:8px;}
   header a.back:hover{background:rgba(255,255,255,0.12);}
 
   /* Intro */
   .intro{background:var(--paper); border-bottom:1px solid var(--border); padding:34px 0;}
-  .intro h1{font-size:26px; margin:0 0 8px;}
-  .intro p{color:var(--text-soft); font-size:15px; margin:0; max-width:640px;}
-  .intro .meta{margin-top:16px; font-size:13px; color:var(--text-soft);}
+  .intro h1{font-size:30px; margin:0 0 8px;}
+  .intro p{color:var(--text-soft); font-size:17px; margin:0; max-width:640px;}
+  .intro .meta{margin-top:16px; font-size:15px; color:var(--text-soft);}
   .intro .meta strong{color:var(--navy-dark);}
 
   form{padding:32px 0 60px;}
   fieldset{background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:26px; margin:0 0 22px;}
-  legend{font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:var(--navy-dark); padding:0 10px;}
-  .sec-note{font-size:13px; color:var(--text-soft); margin:-4px 0 18px;}
+  legend{font-family:'Poppins',sans-serif; font-weight:600; font-size:19.5px; color:var(--navy-dark); padding:0 10px;}
+  .sec-note{font-size:15px; color:var(--text-soft); margin:-4px 0 18px;}
 
-  label{display:block; font-size:13px; font-weight:600; color:var(--navy-dark); margin-bottom:6px;}
+  label{display:block; font-size:15px; font-weight:600; color:var(--navy-dark); margin-bottom:6px;}
   .req::after{content:" *"; color:#B4321F;}
   input[type=text], input[type=email], input[type=tel], input[type=date], input[type=number], select, textarea{
-    width:100%; padding:10px 12px; font-size:14px; font-family:'Inter',sans-serif; color:var(--charcoal);
+    width:100%; padding:10px 12px; font-size:16px; font-family:'Inter',sans-serif; color:var(--charcoal);
     border:1.5px solid var(--border); border-radius:8px; background:#fff; margin-bottom:16px;
   }
   input:focus, select:focus, textarea:focus{outline:none; border-color:var(--teal);}
@@ -55,37 +55,37 @@
   .choice{display:flex; flex-wrap:wrap; gap:10px 22px; margin-bottom:16px;}
   .choice label{display:flex; align-items:center; gap:8px; font-weight:500; color:var(--charcoal); margin:0; cursor:pointer;}
   .choice input{margin:0;}
-  .ack{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; font-size:14px; color:var(--charcoal);}
+  .ack{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; font-size:16px; color:var(--charcoal);}
   .ack input{margin-top:4px; flex-shrink:0; width:18px; height:18px;}
   .ack label{font-weight:500; color:var(--charcoal); margin:0;}
 
-  .policy{background:var(--ice); border:1px solid var(--border); border-radius:10px; padding:18px 20px; max-height:320px; overflow-y:auto; font-size:13px; line-height:1.6; margin-bottom:16px;}
-  .policy h4{margin:0 0 8px; font-size:14px;}
+  .policy{background:var(--ice); border:1px solid var(--border); border-radius:10px; padding:18px 20px; max-height:320px; overflow-y:auto; font-size:15px; line-height:1.6; margin-bottom:16px;}
+  .policy h4{margin:0 0 8px; font-size:16px;}
   .policy p, .policy li{color:#3f4855; margin:0 0 10px;}
   .policy ol{padding-left:20px; margin:0 0 10px;}
 
   .initial-line{display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;}
   .initial-line input{width:90px; flex-shrink:0; margin-bottom:0; text-align:center; text-transform:uppercase;}
-  .initial-line span{font-size:14px; color:var(--charcoal);}
+  .initial-line span{font-size:16px; color:var(--charcoal);}
 
-  table.edu{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:13px;}
-  table.edu th{text-align:left; font-size:12px; color:var(--text-soft); font-weight:600; padding:0 8px 6px 0;}
+  table.edu{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:15px;}
+  table.edu th{text-align:left; font-size:14px; color:var(--text-soft); font-weight:600; padding:0 8px 6px 0;}
   table.edu td{padding:0 8px 8px 0; vertical-align:top;}
   table.edu input{margin-bottom:0;}
 
   .sig-pad{border:1.5px dashed var(--border); border-radius:10px; background:#fff; touch-action:none; width:100%; height:150px; display:block;}
   .sig-actions{margin:8px 0 16px; display:flex; gap:12px; align-items:center;}
-  .btn-clear{background:none; border:1px solid var(--border); color:var(--text-soft); font-size:12px; font-weight:600; padding:6px 12px; border-radius:7px; cursor:pointer;}
+  .btn-clear{background:none; border:1px solid var(--border); color:var(--text-soft); font-size:14px; font-weight:600; padding:6px 12px; border-radius:7px; cursor:pointer;}
 
-  .note{background:#FBEFC9; border-radius:8px; padding:12px 14px; font-size:13px; color:var(--navy-dark); margin-bottom:16px;}
+  .note{background:#FBEFC9; border-radius:8px; padding:12px 14px; font-size:15px; color:var(--navy-dark); margin-bottom:16px;}
   .fill{background:#FBEFC9; border-radius:3px; padding:0 5px; font-weight:600;}
 
   .submit-bar{background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:24px 26px; text-align:center;}
-  .submit-bar p{font-size:13px; color:var(--text-soft); margin:0 0 16px;}
-  button.submit{background:var(--gold); color:var(--navy-dark); font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; border:none; border-radius:10px; padding:14px 40px; cursor:pointer;}
+  .submit-bar p{font-size:15px; color:var(--text-soft); margin:0 0 16px;}
+  button.submit{background:var(--gold); color:var(--navy-dark); font-family:'Poppins',sans-serif; font-weight:600; font-size:18.5px; border:none; border-radius:10px; padding:14px 40px; cursor:pointer;}
   button.submit:hover{background:var(--gold-dark); color:#fff;}
 
-  footer{background:var(--paper); border-top:1px solid var(--border); padding:26px 0; text-align:center; font-size:12px; color:var(--text-soft);}
+  footer{background:var(--paper); border-top:1px solid var(--border); padding:26px 0; text-align:center; font-size:14px; color:var(--text-soft);}
 </style>
 </head>
 <body>
@@ -343,7 +343,7 @@
     <canvas id="sigPad" class="sig-pad"></canvas>
     <div class="sig-actions">
       <button type="button" class="btn-clear" id="sigClear">Clear signature</button>
-      <span style="font-size:12px; color:var(--text-soft);">Draw your signature above.</span>
+      <span style="font-size:14px; color:var(--text-soft);">Draw your signature above.</span>
     </div>
     <input type="hidden" name="signature_image" id="sigData">
     <div class="row c2">
