@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enrollment Application — North Texas Healthcare Academy</title>
+<title>Enrollment Application, North Texas Healthcare Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -86,6 +86,9 @@
   button.submit:hover{background:var(--gold-dark); color:#fff;}
 
   footer{background:var(--paper); border-top:1px solid var(--border); padding:26px 0; text-align:center; font-size:14px; color:var(--text-soft);}
+  .fee-waived{display:inline-block; background:rgba(201,150,44,0.14); color:var(--navy-dark); font-weight:600; font-size:14px; padding:7px 14px; border-radius:20px; margin:0 0 16px;}
+  .fee-waived strong{color:var(--gold-dark);}
+  input[readonly]{background:var(--ice); color:var(--navy-dark); cursor:default;}
 </style>
 </head>
 <body>
@@ -101,10 +104,6 @@
   <div class="wrap">
     <h1>Student Enrollment Application</h1>
     <p>Complete all sections below. Type or print clearly and fill in every applicable field; enter "NA" where an item does not apply. You will sign electronically at the end and may upload supporting documents.</p>
-    <div class="meta">
-      <strong>North Texas Healthcare Academy</strong> &nbsp;·&nbsp; 4222 Moulton St., Suite C, Greenville, TX 75401 &nbsp;·&nbsp; (945) 275-2352<br>
-      TWC School No. S63704 &nbsp;·&nbsp; nthealthcareacademy.com
-    </div>
   </div>
 </div>
 
@@ -125,12 +124,13 @@
     <select name="program" required>
       <option value="">Select a program…</option>
       <option>Certified Nursing Assistant</option>
-      <option>Phlebotomy Technician</option>
-      <option>EKG Technician</option>
-      <option>Medical Assistant</option>
-      <option>Patient Care Technician</option>
-      <option>Medical Billing &amp; Coding</option>
+      <option disabled>Phlebotomy Technician (Coming soon)</option>
+      <option disabled>EKG Technician (Coming soon)</option>
+      <option disabled>Medical Assistant (Coming soon)</option>
+      <option disabled>Patient Care Technician (Coming soon)</option>
+      <option disabled>Medical Billing &amp; Coding (Coming soon)</option>
     </select>
+    <p class="sec-note" style="margin-top:-8px;">Only <strong>Certified Nursing Assistant</strong> is open for enrollment right now. Other programs are coming soon, <a href="#waitlist">join the waitlist</a> and we'll email you when they open.</p>
 
     <div class="row c3">
       <div><label class="req">Last name</label><input type="text" name="last_name" required></div>
@@ -196,10 +196,11 @@
   <fieldset>
     <legend>2. Student Enrollment Agreement</legend>
     <p class="sec-note">Program details and costs are confirmed by the school for your selected program and provided in the school catalog.</p>
+    <div class="fee-waived"><strong>Registration fee waived</strong> &nbsp;·&nbsp; no application fee</div>
 
     <div class="row c3">
-      <div><label>Program length</label><input type="text" name="program_length" placeholder="e.g., 4–6 weeks"></div>
-      <div><label>Clock hours</label><input type="text" name="program_hours"></div>
+      <div><label>Program length</label><input type="text" name="program_length" value="5 weeks" readonly></div>
+      <div><label>Clock hours</label><input type="text" name="program_hours" value="100 hours" readonly></div>
       <div><label>Date to begin</label><input type="date" name="start_date"></div>
     </div>
 
@@ -211,6 +212,7 @@
       <label><input type="radio" name="payment_method" value="Check"> Check</label>
       <label><input type="radio" name="payment_method" value="Cash"> Cash</label>
       <label><input type="radio" name="payment_method" value="Credit/Debit card"> Credit/Debit card</label>
+      <label><input type="radio" name="payment_method" value="Payment plan (Afterpay)"> Payment plan (Afterpay)</label>
     </div>
     <p class="sec-note">Payments will be made before the start of the first day of class.</p>
 
@@ -253,7 +255,7 @@
   <!-- SECTION D: RECEIPT OF ENROLLMENT POLICIES (CSC-009) -->
   <fieldset>
     <legend>4. Receipt of Enrollment Policies</legend>
-    <p class="sec-note">Texas Workforce Commission — Career Schools and Colleges (Form CSC-009). Check each item to acknowledge receipt prior to enrollment.</p>
+    <p class="sec-note">Texas Workforce Commission, Career Schools and Colleges (Form CSC-009). Check each item to acknowledge receipt prior to enrollment.</p>
 
     <p style="font-weight:600; margin:0 0 12px;">A. I have received prior to enrollment:</p>
     <div class="ack"><input type="checkbox" name="csc009_a" value="catalog and program outline" required><label>a copy of the school catalog and a program/course outline for the program(s) in which I wish to enroll.</label></div>
@@ -285,7 +287,7 @@
 
   <!-- SECTION E: PLEASE INITIAL -->
   <fieldset>
-    <legend>5. Acknowledgments — Please Initial</legend>
+    <legend>5. Acknowledgments, Please Initial</legend>
     <p class="sec-note">Enter your initials on each line to acknowledge.</p>
     <div class="initial-line"><input type="text" name="init_tour" maxlength="5" placeholder="Init." required><span>I have had the opportunity to tour the school facilities and equipment.</span></div>
     <div class="initial-line"><input type="text" name="init_catalog" maxlength="5" placeholder="Init." required><span>I have been furnished with the school catalog. It is my responsibility to read and abide by the policies in the catalog.</span></div>
@@ -296,7 +298,7 @@
   <!-- SECTION F: RECORD OF PREVIOUS EDUCATION (CSC-010) -->
   <fieldset>
     <legend>6. Record of Previous Education &amp; Training</legend>
-    <p class="sec-note">Texas Workforce Commission — Career Schools and Colleges (Form CSC-010). Enter "NA" where not applicable.</p>
+    <p class="sec-note">Texas Workforce Commission, Career Schools and Colleges (Form CSC-010). Enter "NA" where not applicable.</p>
 
     <label>Secondary education</label>
     <div class="choice">
@@ -322,7 +324,7 @@
       </tr>
     </table>
 
-    <label>Previous training — identify previous experience and skills that relate to the program curriculum for which you desire credit</label>
+    <label>Previous training, identify previous experience and skills that relate to the program curriculum for which you desire credit</label>
     <textarea name="previous_training"></textarea>
 
     <div class="ack"><input type="checkbox" name="csc010_certify" value="I certify the above is true and complete" required><label>I certify that all the above information is true and complete.</label></div>
@@ -362,6 +364,37 @@
     <button type="submit" class="submit">Submit Application</button>
   </div>
 </form>
+
+<section class="wrap" id="waitlist" style="padding:0 0 60px;">
+  <form action="https://formspree.io/f/mbglkzzo" method="POST">
+    <fieldset>
+      <legend>Join the waitlist</legend>
+      <p class="sec-note">Interested in a program that hasn't opened yet? Add your name and we'll email you the moment enrollment opens.</p>
+      <div class="row c2">
+        <div><label class="req">First name</label><input type="text" name="wl_first_name" required></div>
+        <div><label class="req">Last name</label><input type="text" name="wl_last_name" required></div>
+      </div>
+      <div class="row c2">
+        <div><label class="req">Email</label><input type="email" name="wl_email" required></div>
+        <div><label>Phone</label><input type="tel" name="wl_phone"></div>
+      </div>
+      <label class="req">Program you're interested in</label>
+      <select name="wl_program" required>
+        <option value="">Select a program…</option>
+        <option>Phlebotomy Technician</option>
+        <option>EKG Technician</option>
+        <option>Medical Assistant</option>
+        <option>Patient Care Technician</option>
+        <option>Medical Billing &amp; Coding</option>
+      </select>
+      <input type="hidden" name="_subject" value="NTHA Program Waitlist">
+      <input type="hidden" name="form_type" value="Waitlist">
+      <div style="text-align:center; margin-top:8px;">
+        <button type="submit" class="submit">Join the waitlist</button>
+      </div>
+    </fieldset>
+  </form>
+</section>
 
 <footer>
   <div class="wrap">North Texas Healthcare Academy · 4222 Moulton St., Suite C, Greenville, TX 75401 · (945) 275-2352 · TWC School No. S63704</div>

@@ -166,6 +166,14 @@
   .announce{background:var(--navy-dark);color:#fff;text-align:center;font-size:15.5px;font-weight:500;padding:9px 16px;letter-spacing:0.01em;}
   .announce strong{color:var(--gold);font-weight:700;}
   .announce a{color:#fff;text-decoration:underline;font-weight:600;}
+  .promo-pop{position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(24px); max-width:440px; width:calc(100% - 32px); background:var(--navy-dark); color:#fff; border-radius:14px; padding:20px 46px 20px 22px; box-shadow:0 22px 50px -12px rgba(0,0,0,0.55); z-index:200; opacity:0; pointer-events:none; transition:opacity .35s ease, transform .35s ease;}
+  .promo-pop.show{opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto;}
+  .promo-pop .msg{font-size:16px; line-height:1.5;}
+  .promo-pop .msg strong{color:var(--gold);}
+  .promo-pop .cta{display:inline-block; margin-top:12px; background:var(--gold); color:var(--navy-dark); font-weight:600; font-size:14px; padding:9px 18px; border-radius:8px; text-decoration:none;}
+  .promo-pop .cta:hover{background:var(--gold-dark); color:#fff;}
+  .promo-close{position:absolute; top:10px; right:12px; background:none; border:none; color:#fff; font-size:24px; line-height:1; cursor:pointer; opacity:0.75;}
+  .promo-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -362,6 +370,29 @@
     });
     m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');t.innerHTML='&#9776;';t.setAttribute('aria-expanded','false');});});
   })();
+</script>
+<div class="promo-pop" id="promoPop" role="dialog" aria-live="polite">
+  <button class="promo-close" id="promoClose" aria-label="Close">&times;</button>
+  <div class="msg"><strong>Registration fee waived</strong> for a limited time. Apply now with no application fee.</div>
+  <a href="enroll.html" class="cta">Apply now</a>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('promoPop'), close=document.getElementById('promoClose');
+  if(!pop||!close) return;
+  var dismissed=false;
+  try{ dismissed = sessionStorage.getItem('nthaPromoDismissed')==='1'; }catch(e){}
+  var shown=false;
+  function maybeShow(){
+    if(shown||dismissed) return;
+    if(window.scrollY>250){ pop.classList.add('show'); shown=true; window.removeEventListener('scroll', maybeShow); }
+  }
+  window.addEventListener('scroll', maybeShow, {passive:true});
+  close.addEventListener('click', function(){
+    pop.classList.remove('show');
+    try{ sessionStorage.setItem('nthaPromoDismissed','1'); }catch(e){}
+  });
+})();
 </script>
 </body>
 </html>
