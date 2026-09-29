@@ -60,6 +60,16 @@
 
   @media (max-width:900px){ nav ul{display:none;} .nav-toggle{display:block;} .pay-wrap{grid-template-columns:1fr;} }
   @media (max-width:560px){ .wrap{padding:0 20px;} .hero h1{font-size:28.5px;} }
+
+  .fee-table{margin:8px 0 16px; border:1px solid var(--border); border-radius:12px; overflow:hidden;}
+  .fee-row{display:flex; justify-content:space-between; padding:12px 16px; font-size:16.5px; color:#3f4855;}
+  .fee-row:not(:last-child){border-bottom:1px solid var(--border);}
+  .fee-row.total{background:var(--ice); font-weight:700; color:var(--navy-dark); font-size:18.5px;}
+  .save-note{background:rgba(14,124,123,0.10); border-left:4px solid var(--teal); padding:13px 16px; border-radius:8px; font-size:16px; color:var(--navy-dark); margin-bottom:14px;}
+  .save-note strong{color:var(--teal-dark);}
+  .methods{margin-top:22px; background:var(--paper); border:1px solid var(--border); border-radius:14px; padding:24px 28px;}
+  .methods h3{margin:0 0 8px;}
+  .methods p{margin:0; color:#3f4855; font-size:16.5px;}
 </style>
 </head>
 <body>
@@ -105,10 +115,16 @@
   <div class="pay-wrap">
     <div class="pay-card primary">
       <div class="eyebrow">Certified Nursing Assistant</div>
-      <h2>CNA Tuition, pay in full</h2>
-      <div class="price">$750</div>
-      <p>Pay your full CNA program tuition in one secure payment. You'll receive an emailed receipt, and admissions will follow up with your next steps.</p>
-      <a href="https://square.link/u/pbHosj3l" class="btn-pay" target="_blank" rel="noopener">Pay tuition &rarr;</a>
+      <h2>CNA tuition and fees</h2>
+      <div class="fee-table">
+        <div class="fee-row"><span>Tuition</span><span>$700</span></div>
+        <div class="fee-row"><span>Textbook</span><span>$50</span></div>
+        <div class="fee-row"><span>State certification exam</span><span>$125</span></div>
+        <div class="fee-row total"><span>Total</span><span>$875</span></div>
+      </div>
+      <div class="save-note"><strong>Save $100</strong> when you pay in full at registration. Your total becomes <strong>$775</strong>.</div>
+      <p style="font-size:14.5px; color:var(--text-soft);">Registration fee waived, so there is no application fee to get started.</p>
+      <a href="https://square.link/u/pbHosj3l" class="btn-pay" target="_blank" rel="noopener">Pay in full &rarr;</a>
     </div>
 
     <div class="pay-card">
@@ -125,6 +141,10 @@
     <p>Tuition is due before the first day of class. Payment plans are arranged individually with admissions.</p>
     <p>Questions about cost, books, or the state exam fee? Email <a href="mailto:admissions@nthealthcareacademy.com">admissions@nthealthcareacademy.com</a> or call (945) 275-2352.</p>
     <p>Refunds follow the school's cancellation and refund policy, provided in your enrollment agreement.</p>
+  </div>
+  <div class="methods">
+    <h3>Ways you can pay</h3>
+    <p>We accept cash, money order, cashier's check, credit card, and debit card. You can pay tuition securely online by card or with Afterpay, or arrange another method with admissions at registration.</p>
   </div>
 
   <div class="secure">
