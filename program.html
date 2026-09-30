@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programs — North Texas Healthcare Academy</title>
+<title>Programs, North Texas Healthcare Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -72,6 +72,11 @@
   .idx-card.live{border-top-color:var(--gold);}
   .idx-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:19.5px;color:var(--navy-dark);}
   .idx-dur{font-size:15px;color:var(--teal-dark);font-weight:600;}
+  .idx-desc{font-size:15px;color:#4a5461;line-height:1.5;margin:2px 0 2px;}
+  .idx-actions{display:flex;align-items:center;gap:14px;margin-top:6px;flex-wrap:wrap;}
+  .idx-actions .idx-go{margin-top:0;}
+  .idx-apply{display:inline-block;background:var(--gold);color:var(--navy-dark);font-weight:700;font-size:14.5px;padding:8px 16px;border-radius:8px;text-decoration:none;}
+  .idx-apply:hover{background:var(--gold-dark);color:#fff;}
   .idx-go{margin-top:6px;font-size:15.5px;font-weight:600;color:var(--navy);}
 
   footer{background:var(--paper);border-top:1px solid var(--border);padding:30px 0;text-align:center;font-size:14.5px;color:var(--text-soft);}
@@ -127,12 +132,20 @@
     <h1>Our programs</h1>
     <p class="sub">Short, hands-on healthcare certifications built around real clinical practice. Choose a program to see what you'll learn, how long it takes, and what it prepares you for.</p>
     <div class="idx-grid">
-      <a class="idx-card live" href="program.html#cna"><span class="idx-name">Certified Nursing Assistant</span><span class="idx-dur">5 weeks</span><span class="idx-go">View program &rarr;</span></a>
-      <a class="idx-card" href="program.html#phlebotomy"><span class="idx-name">Phlebotomy Technician</span><span class="idx-dur">6 to 8 weeks · Coming soon</span><span class="idx-go">View program &rarr;</span></a>
-      <a class="idx-card" href="program.html#ekg"><span class="idx-name">EKG Technician</span><span class="idx-dur">4 weeks · Coming soon</span><span class="idx-go">View program &rarr;</span></a>
-      <a class="idx-card" href="program.html#medical-assistant"><span class="idx-name">Medical Assistant</span><span class="idx-dur">12 to 16 weeks · Coming soon</span><span class="idx-go">View program &rarr;</span></a>
-      <a class="idx-card" href="program.html#patient-care-technician"><span class="idx-name">Patient Care Technician</span><span class="idx-dur">8 to 10 weeks · Coming soon</span><span class="idx-go">View program &rarr;</span></a>
-      <a class="idx-card" href="program.html#medical-billing-coding"><span class="idx-name">Medical Billing &amp; Coding</span><span class="idx-dur">12 weeks · Coming soon</span><span class="idx-go">View program &rarr;</span></a>
+      <div class="idx-card live">
+        <span class="idx-name">Certified Nursing Assistant</span>
+        <span class="idx-dur">5 weeks</span>
+        <span class="idx-desc">Provide hands-on patient care in hospitals, long-term care, and home health, and prepare for the Texas state certification exam.</span>
+        <div class="idx-actions">
+          <a class="idx-go" href="program.html#cna">View program &rarr;</a>
+          <a class="idx-apply" href="enroll.html">Apply now</a>
+        </div>
+      </div>
+      <a class="idx-card" href="program.html#phlebotomy"><span class="idx-name">Phlebotomy Technician</span><span class="idx-dur">6 to 8 weeks · Coming soon</span><span class="idx-desc">Learn to draw blood safely and handle specimens, and prepare for national phlebotomy certification.</span><span class="idx-go">View program &rarr;</span></a>
+      <a class="idx-card" href="program.html#ekg"><span class="idx-name">EKG Technician</span><span class="idx-dur">4 weeks · Coming soon</span><span class="idx-desc">Learn to perform EKGs and monitor heart activity to support cardiac care teams.</span><span class="idx-go">View program &rarr;</span></a>
+      <a class="idx-card" href="program.html#medical-assistant"><span class="idx-name">Medical Assistant</span><span class="idx-dur">12 to 16 weeks · Coming soon</span><span class="idx-desc">Train for the clinical and administrative skills that keep medical offices running.</span><span class="idx-go">View program &rarr;</span></a>
+      <a class="idx-card" href="program.html#patient-care-technician"><span class="idx-name">Patient Care Technician</span><span class="idx-dur">8 to 10 weeks · Coming soon</span><span class="idx-desc">Build on nurse aide skills with added training in phlebotomy, EKG, and advanced patient care.</span><span class="idx-go">View program &rarr;</span></a>
+      <a class="idx-card" href="program.html#medical-billing-coding"><span class="idx-name">Medical Billing &amp; Coding</span><span class="idx-dur">12 weeks · Coming soon</span><span class="idx-desc">Learn medical coding, claims, and billing to support healthcare offices and insurers.</span><span class="idx-go">View program &rarr;</span></a>
     </div>
   </section>
 
@@ -419,7 +432,7 @@
 </div>
 
 <footer>
-  <div class="wrap">North Texas Healthcare Academy · 4222 Moulton St., Suite C, Greenville, TX 75401 · (945) 275-2352 · TWC School No. S63704</div>
+  <div class="wrap">North Texas Healthcare Academy · 4222 Moulton St., Suite C, Greenville, TX 75401 · (945) 275.2352 · TWC School No. S63704</div>
 </footer>
 
 <script>
