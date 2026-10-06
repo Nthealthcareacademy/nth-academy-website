@@ -78,6 +78,16 @@
   .disclosure p{margin:0 0 10px; font-size:16px; color:#3f4855; line-height:1.6;}
   .disclosure .addr{font-weight:600; color:var(--navy-dark); line-height:1.5;}
   @media (max-width:560px){ .policies{padding:8px 20px 48px;} }
+
+  .disclosure-2col{display:grid; grid-template-columns:1.5fr 1fr; gap:26px; align-items:start;}
+  .disc-main h3{margin:0 0 10px;}
+  .disc-side{background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:18px 20px;}
+  .disc-side h4{margin:0 0 10px; font-size:13.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--teal-dark); font-family:'Poppins',sans-serif;}
+  .disc-side .addr{font-weight:600; color:var(--navy-dark); line-height:1.5; font-size:15.5px; margin:0 0 12px;}
+  .disc-contact{font-size:15px; margin:0; line-height:1.9;}
+  .disc-contact a{color:var(--teal-dark); font-weight:600; text-decoration:none; word-break:break-word;}
+  .disc-contact a:hover{text-decoration:underline;}
+  @media (max-width:700px){ .disclosure-2col{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -196,11 +206,17 @@
     </details>
   </div>
 
-  <div class="disclosure">
-    <h3>Approvals and student complaints</h3>
-    <p>North Texas Healthcare Academy is approved and regulated by the Texas Workforce Commission, Career Schools and Colleges, Austin, Texas (School No. S63704). The Nurse Aide program is approved by Texas Health and Human Services.</p>
-    <p>We encourage students to bring any concern first to the school director. Any unresolved grievance may be directed to:</p>
-    <p class="addr">Texas Workforce Commission<br>Career Schools and Colleges<br>101 E. 15th Street<br>Austin, TX 78778-0001</p>
+  <div class="disclosure disclosure-2col">
+    <div class="disc-main">
+      <h3>State approval and student complaints</h3>
+      <p>North Texas Healthcare Academy is regulated by the Texas Workforce Commission (TWC), Career Schools and Colleges. <strong>TWC School Number: S63704.</strong> TWC Certificate of Approval: pending issuance; this notice will be updated when the certificate is issued. The school's Nurse Aide Training and Competency Evaluation Program (NATCEP) is approved by the Texas Health and Human Services Commission (HHSC), NATCEP Program Code 7317 (approved May 28, 2026; expires May 28, 2028).</p>
+      <p>If a student is dissatisfied with the school's response to a complaint, the student may file a formal complaint with the Texas Workforce Commission, Career Schools and Colleges, as well as with the school's accrediting body, if applicable. Additional information on the TWC complaint process is available on the Texas Workforce Commission's <a href="https://www.texasworkforce.org/careerschoolstudents" target="_blank" rel="noopener">Career Schools and Colleges website</a>.</p>
+    </div>
+    <aside class="disc-side">
+      <h4>Complaint policy</h4>
+      <p class="addr">Texas Workforce Commission<br>Career Schools and Colleges, Room 226T<br>101 East 15th Street<br>Austin, Texas 78778-0001</p>
+      <p class="disc-contact"><a href="tel:+15129363100">(512) 936.3100</a><br><a href="mailto:career.schools@twc.texas.gov">career.schools@twc.texas.gov</a><br><a href="https://www.texasworkforce.org/careerschoolstudents" target="_blank" rel="noopener">texasworkforce.org/careerschoolstudents</a></p>
+    </aside>
   </div>
 </section>
 
