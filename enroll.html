@@ -341,16 +341,14 @@
   <!-- SECTION H: SIGNATURE -->
   <fieldset>
     <legend>8. Electronic Signature</legend>
-    <p class="sec-note">Sign in the box below using your mouse or finger. This applies to the Enrollment Agreement and all acknowledgments above.</p>
-    <canvas id="sigPad" class="sig-pad"></canvas>
-    <div class="sig-actions">
-      <button type="button" class="btn-clear" id="sigClear">Clear signature</button>
-      <span style="font-size:14px; color:var(--text-soft);">Draw your signature above.</span>
-    </div>
-    <input type="hidden" name="signature_image" id="sigData">
+    <p class="sec-note">Type your full legal name below to sign this application electronically. Your typed name applies to the Enrollment Agreement and all acknowledgments above.</p>
     <div class="row c2">
-      <div><label class="req">Printed name of student</label><input type="text" name="signature_printed_name" required></div>
+      <div><label class="req">Full legal name (your electronic signature)</label><input type="text" name="signature_typed_name" placeholder="Type your full legal name" required></div>
       <div><label class="req">Date</label><input type="date" name="signature_date" required></div>
+    </div>
+    <div class="ack">
+      <input type="checkbox" name="ack_esign" value="I agree that typing my name is my electronic signature" required>
+      <label>I agree that typing my full legal name above is my electronic signature and has the same legal effect as a handwritten signature.</label>
     </div>
     <div class="ack">
       <input type="checkbox" name="ack_final" value="I certify all information is true and correct" required>
@@ -400,43 +398,5 @@
   <div class="wrap">North Texas Healthcare Academy · 4222 Moulton St., Suite C, Greenville, TX 75401 · (945) 275.2352 · TWC School No. S63704</div>
 </footer>
 
-<script>
-  // Signature pad
-  var canvas = document.getElementById('sigPad');
-  var ctx = canvas.getContext('2d');
-  var drawing = false, dirty = false;
-  function resize(){
-    var ratio = window.devicePixelRatio || 1;
-    var rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * ratio;
-    canvas.height = rect.height * ratio;
-    ctx.scale(ratio, ratio);
-    ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.strokeStyle = '#102241';
-  }
-  window.addEventListener('resize', function(){ var d=document.getElementById('sigData').value; resize(); });
-  resize();
-  function pos(e){
-    var rect = canvas.getBoundingClientRect();
-    var t = e.touches ? e.touches[0] : e;
-    return {x: t.clientX - rect.left, y: t.clientY - rect.top};
-  }
-  function start(e){ drawing=true; dirty=true; var p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); e.preventDefault(); }
-  function move(e){ if(!drawing) return; var p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); e.preventDefault(); }
-  function end(){ drawing=false; if(dirty){ document.getElementById('sigData').value = canvas.toDataURL('image/png'); } }
-  canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move);
-  window.addEventListener('mouseup', end);
-  canvas.addEventListener('touchstart', start); canvas.addEventListener('touchmove', move); canvas.addEventListener('touchend', end);
-  document.getElementById('sigClear').addEventListener('click', function(){
-    ctx.clearRect(0,0,canvas.width,canvas.height); dirty=false; document.getElementById('sigData').value='';
-  });
-  // Ensure signature captured on submit
-  document.getElementById('enrollForm').addEventListener('submit', function(e){
-    if(dirty){ document.getElementById('sigData').value = canvas.toDataURL('image/png'); }
-    if(!document.getElementById('sigData').value){
-      e.preventDefault();
-      alert('Please sign in the signature box before submitting.');
-    }
-  });
-</script>
 </body>
 </html>
