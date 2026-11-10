@@ -115,13 +115,13 @@
 
     <label class="req">This application is for</label>
     <div class="choice">
-      <label><input type="radio" name="class_schedule" value="Day Class" required> Day Class</label>
-      <label><input type="radio" name="class_schedule" value="Evening Class"> Evening Class</label>
-      <label><input type="radio" name="class_schedule" value="Weekend"> Weekend</label>
+      <label><input type="radio" name="Class schedule" value="Day Class" required> Day Class</label>
+      <label><input type="radio" name="Class schedule" value="Evening Class"> Evening Class</label>
+      <label><input type="radio" name="Class schedule" value="Weekend"> Weekend</label>
     </div>
 
     <label class="req">Program applying for</label>
-    <select name="program" required>
+    <select name="Program" required>
       <option value="">Select a program…</option>
       <option>Certified Nursing Assistant</option>
       <option disabled>Phlebotomy Technician (Coming soon)</option>
@@ -133,62 +133,62 @@
     <p class="sec-note" style="margin-top:-8px;">Only <strong>Certified Nursing Assistant</strong> is open for enrollment right now. Other programs are coming soon, <a href="#waitlist">join the waitlist</a> and we'll email you when they open.</p>
 
     <div class="row c3">
-      <div><label class="req">Last name</label><input type="text" name="last_name" required></div>
-      <div><label class="req">First name</label><input type="text" name="first_name" required></div>
-      <div><label>Middle name</label><input type="text" name="middle_name"></div>
+      <div><label class="req">Last name</label><input type="text" name="Last name" required></div>
+      <div><label class="req">First name</label><input type="text" name="First name" required></div>
+      <div><label>Middle name</label><input type="text" name="Middle name"></div>
     </div>
 
     <div class="row c3">
-      <div><label class="req">Social Security #</label><input type="text" name="ssn" required></div>
-      <div><label class="req">Date of birth</label><input type="date" name="dob" required></div>
-      <div><label class="req">Phone #</label><input type="tel" name="phone" required></div>
+      <div><label class="req">Social Security #</label><input type="text" name="Social Security Number" required></div>
+      <div><label class="req">Date of birth</label><input type="date" name="Date of birth" required></div>
+      <div><label class="req">Phone #</label><input type="tel" name="Phone" required></div>
     </div>
 
-    <label class="req">Email</label><input type="email" name="email" required>
+    <label class="req">Email</label><input type="email" name="Email" required>
 
     <div class="row c3">
-      <div><label class="req">Address</label><input type="text" name="address" required></div>
-      <div><label class="req">City</label><input type="text" name="city" required></div>
-      <div><label class="req">Zip</label><input type="text" name="zip" required></div>
+      <div><label class="req">Address</label><input type="text" name="Street address" required></div>
+      <div><label class="req">City</label><input type="text" name="City" required></div>
+      <div><label class="req">Zip</label><input type="text" name="ZIP code" required></div>
     </div>
 
-    <label>Highest school completed</label><input type="text" name="highest_school">
+    <label>Highest school completed</label><input type="text" name="Highest level of school completed">
 
     <h4 style="margin:12px 0 12px;">In case of emergency, please notify</h4>
     <div class="row c3">
-      <div><label class="req">Name</label><input type="text" name="emergency_name" required></div>
-      <div><label class="req">Phone #</label><input type="tel" name="emergency_phone" required></div>
-      <div><label class="req">Relationship</label><input type="text" name="emergency_relationship" required></div>
+      <div><label class="req">Name</label><input type="text" name="Emergency contact name" required></div>
+      <div><label class="req">Phone #</label><input type="tel" name="Emergency contact phone" required></div>
+      <div><label class="req">Relationship</label><input type="text" name="Emergency contact relationship" required></div>
     </div>
 
     <label>Have you ever taken this class before?</label>
     <div class="choice">
-      <label><input type="radio" name="taken_before" value="Yes"> Yes</label>
-      <label><input type="radio" name="taken_before" value="No"> No</label>
+      <label><input type="radio" name="Taken this course before?" value="Yes"> Yes</label>
+      <label><input type="radio" name="Taken this course before?" value="No"> No</label>
     </div>
     <div class="row c2">
-      <div><label>If yes, when</label><input type="text" name="taken_when"></div>
-      <div><label>Where</label><input type="text" name="taken_where"></div>
+      <div><label>If yes, when</label><input type="text" name="If taken before: when"></div>
+      <div><label>Where</label><input type="text" name="If taken before: where"></div>
     </div>
 
     <label>Are you receiving financial assistance to attend this class?</label>
     <div class="choice">
-      <label><input type="radio" name="financial_assistance" value="Yes"> Yes</label>
-      <label><input type="radio" name="financial_assistance" value="No"> No</label>
+      <label><input type="radio" name="Requesting financial assistance?" value="Yes"> Yes</label>
+      <label><input type="radio" name="Requesting financial assistance?" value="No"> No</label>
     </div>
 
     <label>How did you hear about us?</label>
     <div class="choice">
-      <label><input type="checkbox" name="referral_source" value="Flyer"> Flyer</label>
-      <label><input type="checkbox" name="referral_source" value="Facebook"> Facebook</label>
-      <label><input type="checkbox" name="referral_source" value="Internet"> Internet</label>
-      <label><input type="checkbox" name="referral_source" value="Friend referral"> Friend referral</label>
+      <label><input type="checkbox" name="How did you hear about us?" value="Flyer"> Flyer</label>
+      <label><input type="checkbox" name="How did you hear about us?" value="Facebook"> Facebook</label>
+      <label><input type="checkbox" name="How did you hear about us?" value="Internet"> Internet</label>
+      <label><input type="checkbox" name="How did you hear about us?" value="Friend referral"> Friend referral</label>
     </div>
-    <label>If other, please specify</label><input type="text" name="referral_specify">
+    <label>If other, please specify</label><input type="text" name="Referral details">
     <label>Preferred update method</label>
     <div class="choice">
-      <label><input type="checkbox" name="update_via" value="Email"> Email</label>
-      <label><input type="checkbox" name="update_via" value="Text Messages"> Text Messages</label>
+      <label><input type="checkbox" name="Preferred contact method" value="Email"> Email</label>
+      <label><input type="checkbox" name="Preferred contact method" value="Text Messages"> Text Messages</label>
     </div>
   </fieldset>
 
@@ -199,20 +199,20 @@
     <div class="fee-waived"><strong>Registration fee waived</strong> &nbsp;·&nbsp; no application fee</div>
 
     <div class="row c3">
-      <div><label>Program length</label><input type="text" name="program_length" value="5 weeks" readonly></div>
-      <div><label>Clock hours</label><input type="text" name="program_hours" value="100 hours" readonly></div>
-      <div><label>Date to begin</label><input type="date" name="start_date"></div>
+      <div><label>Program length</label><input type="text" name="Program length" value="5 weeks" readonly></div>
+      <div><label>Clock hours</label><input type="text" name="Program hours" value="100 hours" readonly></div>
+      <div><label>Date to begin</label><input type="date" name="Requested start date"></div>
     </div>
 
 
     <label class="req">Method of payment</label>
     <div class="choice">
-      <label><input type="radio" name="payment_method" value="Money Order" required> Money Order</label>
-      <label><input type="radio" name="payment_method" value="Cashier Check"> Cashier Check</label>
-      <label><input type="radio" name="payment_method" value="Check"> Check</label>
-      <label><input type="radio" name="payment_method" value="Cash"> Cash</label>
-      <label><input type="radio" name="payment_method" value="Credit/Debit card"> Credit/Debit card</label>
-      <label><input type="radio" name="payment_method" value="Payment plan (Afterpay)"> Payment plan (Afterpay)</label>
+      <label><input type="radio" name="Payment method" value="Money Order" required> Money Order</label>
+      <label><input type="radio" name="Payment method" value="Cashier Check"> Cashier Check</label>
+      <label><input type="radio" name="Payment method" value="Check"> Check</label>
+      <label><input type="radio" name="Payment method" value="Cash"> Cash</label>
+      <label><input type="radio" name="Payment method" value="Credit/Debit card"> Credit/Debit card</label>
+      <label><input type="radio" name="Payment method" value="Payment plan (Afterpay)"> Payment plan (Afterpay)</label>
     </div>
     <p class="sec-note">Payments will be made before the start of the first day of class.</p>
 
@@ -276,11 +276,11 @@
 
     <label>Employment in this career field requires state or national licensing, certification, or registration</label>
     <div class="choice">
-      <label><input type="radio" name="licensing_required" value="Does" checked> Does</label>
-      <label><input type="radio" name="licensing_required" value="Does not"> Does not</label>
+      <label><input type="radio" name="Program requires state licensing?" value="Does" checked> Does</label>
+      <label><input type="radio" name="Program requires state licensing?" value="Does not"> Does not</label>
     </div>
     <label>Name of State or National License, Certificate, or Registration (if required)</label>
-    <input type="text" name="license_name" value="" placeholder="e.g., Texas Nurse Aide Certification (for CNA)">
+    <input type="text" name="Licensing / exam name" value="" placeholder="e.g., Texas Nurse Aide Certification (for CNA)">
 
     <div class="ack" style="margin-top:8px;"><input type="checkbox" name="Certifies: all information provided before enrollment" value="Yes" required><label>I certify that I have been provided all the information above prior to my enrollment, and I understand it is my responsibility to notify the school if I withdraw prior to completion.</label></div>
   </fieldset>
@@ -302,30 +302,30 @@
 
     <label>Secondary education</label>
     <div class="choice">
-      <label><input type="radio" name="secondary_education" value="High School Diploma"> High School Diploma</label>
-      <label><input type="radio" name="secondary_education" value="Home Schooled"> Home Schooled</label>
-      <label><input type="radio" name="secondary_education" value="GED"> GED</label>
+      <label><input type="radio" name="Secondary education" value="High School Diploma"> High School Diploma</label>
+      <label><input type="radio" name="Secondary education" value="Home Schooled"> Home Schooled</label>
+      <label><input type="radio" name="Secondary education" value="GED"> GED</label>
     </div>
 
     <label>Post-secondary education (list any college, technical/vocational, or other)</label>
     <table class="edu">
       <tr><th>Name &amp; location of school</th><th>Dates attended</th><th>Graduated?</th><th>Diploma / field of study</th></tr>
       <tr>
-        <td><input type="text" name="edu1_school"></td>
-        <td><input type="text" name="edu1_dates"></td>
-        <td><input type="text" name="edu1_grad" placeholder="Y/N"></td>
-        <td><input type="text" name="edu1_field"></td>
+        <td><input type="text" name="Other education 1: institution"></td>
+        <td><input type="text" name="Other education 1: dates attended"></td>
+        <td><input type="text" name="Other education 1: graduated?" placeholder="Y/N"></td>
+        <td><input type="text" name="Other education 1: field of study"></td>
       </tr>
       <tr>
-        <td><input type="text" name="edu2_school"></td>
-        <td><input type="text" name="edu2_dates"></td>
-        <td><input type="text" name="edu2_grad" placeholder="Y/N"></td>
-        <td><input type="text" name="edu2_field"></td>
+        <td><input type="text" name="Other education 2: institution"></td>
+        <td><input type="text" name="Other education 2: dates attended"></td>
+        <td><input type="text" name="Other education 2: graduated?" placeholder="Y/N"></td>
+        <td><input type="text" name="Other education 2: field of study"></td>
       </tr>
     </table>
 
     <label>Previous training, identify previous experience and skills that relate to the program curriculum for which you desire credit</label>
-    <textarea name="previous_training"></textarea>
+    <textarea name="Previous training or work experience"></textarea>
 
     <div class="ack"><input type="checkbox" name="Certifies: all information true and complete" value="Yes" required><label>I certify that all the above information is true and complete.</label></div>
   </fieldset>
@@ -335,7 +335,7 @@
     <legend>7. Supporting Documents (optional)</legend>
     <p class="sec-note">Upload a photo ID, high school diploma/GED, or any documents requested by the school. Accepted: PDF, JPG, PNG.</p>
     <label>Attach documents</label>
-    <input type="file" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png">
+    <input type="file" name="Uploaded documents" multiple accept=".pdf,.jpg,.jpeg,.png">
   </fieldset>
 
   <!-- SECTION H: SIGNATURE -->
@@ -343,15 +343,15 @@
     <legend>8. Electronic Signature</legend>
     <p class="sec-note">Type your full legal name below to sign this application electronically. Your typed name applies to the Enrollment Agreement and all acknowledgments above.</p>
     <div class="row c2">
-      <div><label class="req">Full legal name (your electronic signature)</label><input type="text" name="signature_typed_name" placeholder="Type your full legal name" required></div>
-      <div><label class="req">Date</label><input type="date" name="signature_date" required></div>
+      <div><label class="req">Full legal name (your electronic signature)</label><input type="text" name="Electronic signature (typed name)" placeholder="Type your full legal name" required></div>
+      <div><label class="req">Date</label><input type="date" name="Signature date" required></div>
     </div>
     <div class="ack">
-      <input type="checkbox" name="ack_esign" value="I agree that typing my name is my electronic signature" required>
+      <input type="checkbox" name="Agrees typed name is electronic signature" value="I agree that typing my name is my electronic signature" required>
       <label>I agree that typing my full legal name above is my electronic signature and has the same legal effect as a handwritten signature.</label>
     </div>
     <div class="ack">
-      <input type="checkbox" name="ack_final" value="I certify all information is true and correct" required>
+      <input type="checkbox" name="Certifies all information true and correct" value="I certify all information is true and correct" required>
       <label>I certify that the information provided in this application is true and correct. I understand that false information may result in immediate suspension or removal from the course with no refund. I understand that successful completion of a course satisfies the academic requirements to sit for the state exam but does not guarantee state certification.</label>
     </div>
   </fieldset>
@@ -369,15 +369,15 @@
       <legend>Join the waitlist</legend>
       <p class="sec-note">Interested in a program that hasn't opened yet? Add your name and we'll email you the moment enrollment opens.</p>
       <div class="row c2">
-        <div><label class="req">First name</label><input type="text" name="wl_first_name" required></div>
-        <div><label class="req">Last name</label><input type="text" name="wl_last_name" required></div>
+        <div><label class="req">First name</label><input type="text" name="Waitlist: first name" required></div>
+        <div><label class="req">Last name</label><input type="text" name="Waitlist: last name" required></div>
       </div>
       <div class="row c2">
-        <div><label class="req">Email</label><input type="email" name="wl_email" required></div>
-        <div><label>Phone</label><input type="tel" name="wl_phone"></div>
+        <div><label class="req">Email</label><input type="email" name="Waitlist: email" required></div>
+        <div><label>Phone</label><input type="tel" name="Waitlist: phone"></div>
       </div>
       <label class="req">Program you're interested in</label>
-      <select name="wl_program" required>
+      <select name="Waitlist: program of interest" required>
         <option value="">Select a program…</option>
         <option>Phlebotomy Technician</option>
         <option>EKG Technician</option>
